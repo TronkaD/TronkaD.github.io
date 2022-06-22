@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet-Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Modal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="Big-container">
+        <div class="nav-bar isPurple">
+            <div id="getdate"></div>
+            <button class="user-profil"><a href="#modal2" class="js-modal" id="btn-ajout">Profil</a></button>
+        </div>
+        <aside id="modal2" class="modal2" aria-hidden="true" role="dialog" aria-labelledby="title-profil" style="display:none;">
+            <div class="modal-wrapper js-modal-stop">
+                <button class="js-modal-close"><i class="fa-solid fa-rectangle-xmark"></i></button>
+                <h1 id="title-profil">PROFIL USER</h1> 
+                <div class="form-container">
+                    <form action="">
+                        <label class="profil">
+                            <strong>Nom</strong>
+                            <input type="text" name="firstName" id="getFirstName"/>
+                        </label>
+                        <label class="profil">
+                            <strong>Prénom</strong>
+                            <input type="text" name="lastName" id="getLastName"/>
+                        </label>
+                        <label class="profil">
+                            <strong></strong>
+                            <input type="date" name="dateOfBirth" id="getDateOfBirth"/>
+                        </label>
+                        <label class="profil">
+                            <strong>Adress Mail</strong>
+                            <input type="email" name="email" id="getEmail"/>
+                        </label>
+                        <label class="profil">
+                            <strong>Phone</strong>
+                            <input type="tel" name="yourNumber" id="getYourNumber"/>
+                        </label>
+                        <label class="profil">
+                            <strong>Sexe</strong>
+                            <select id ="getSexe" class="sexe">
+                                <option value="">Sexe</option>
+                                <option value="Masculin">Masculin</option>
+                                <option value="Feminin">Féminin</option>
+                            </select>
+                        </label>
+                        <div class="btn-container">
+                            <button type="reset">Modifier</button>
+                            <button type="button" onclick=" Ajouter()">Valider</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </aside> 
+        <div class="main-container">
+            <div class="first-line">
+                <div class="item-left">
+                    <div class="search">
+                        <input type="search" name="search" id="search" placeholder="search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div class="sexe">
+                        <select name="sexe" id="sexe">
+                            <option value="">Sexe</option>
+                            <option value="M">Masculin</option>
+                            <option value="F">Féminin</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="item-right">
+                    <button type="button"><a href="#modal1" class="js-modal" id="btn-ajout">Ajouter</a></button>
+                    <button type="button">Supprimer</button>
+                </div>
+                <!--html de la boite modal AJOUT-->
+            </div>
+            <aside id="modal1" class="modal1" aria-hidden="true" role="dialog" aria-labelledby="title-modal" style="display:none;">
+                <div class="modal-wrapper js-modal-stop">
+                    <button class="js-modal-close"><i class="fa-solid fa-rectangle-xmark"></i></button>
+                    <h1 id="title-modal">AJOUT USER</h1> 
+                    <div class="form-container">
+                        <form action="">
+                            <label>
+                                <strong>Nom</strong>
+                                <input type="text" name="firstName" id="firstName" onfocus="getError()"/>
+                                <div id="name-incorrect" class="error"></div> 
+                            </label>
+                            <label>
+                                <strong>Prénom</strong>
+                                <input type="text" name="lastName" id="lastName" onfocus="getError()"/>
+                                <div id="lastName-incorrect" class="error"></div>
+                            </label>
+                            <label>
+                                <strong>Date Naissance</strong>
+                                <input type="date" name="dateOfBirth" id="dateOfBirth" onfocus="getError()"/>
+                                <div id="date-incorrect" class="error"></div>
+                            </label>
+                            <label>
+                                <strong>Adress Mail</strong>
+                                <input type="email" name="email" id="email" onfocus="getError()"/>
+                                <div id="email-incorrect" class="error"></div>
+                            </label>
+                            <label>
+                                <strong>Phone</strong>
+                                <input type="tel" name="yourNumber" id="yourNumber" onfocus="getError()"/>
+                                <div id="tel-incorrect" class="error"></div>
+                            </label>
+                            <label>
+                                <strong>Sexe</strong>
+                                <select id ="sexe2" class="sexes">
+                                    <option value="">Sexe</option>
+                                    <option value="Masculin">Masculin</option>
+                                    <option value="Féminin">Féminin</option>
+                                </select>
+                                <div id="sexe-incorrect" class="error"></div>
+                            </label>
+                            <div class="btn-container">
+                                <button type="reset">Annuler</button>
+                                <button type="button" onclick=" Ajouter()">Ajouter</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </aside> 
+            <div class="table-container">
+                <table cellspacing="0" width="100%" border="1">
+                    <thead>
+                        <tr>
+                            <th class="checkb">#</th>
+                            <th>id</th>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Date Naissance</th>
+                            <th>Adresse e-mail</th>
+                            <th>Phone</th>
+                            <th>Sexe</th>
+                            <th colspan="3">ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    </tbody>  
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--SCRIPT LINK-->
+    <script src = "date.js"></script>
+    <script src="modal.js"></script>
+    <script src=data-user.js></script>
+</body>
+</html>

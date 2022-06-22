@@ -1,0 +1,130 @@
+/* MODAL-EDIT */
+.modal2 {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    opacity: 0.8;
+}
+#title-profil{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+.profil input{
+    width: 280px;
+    height: 25px;
+    margin-top: 5px;
+    border: none;
+    border-bottom: 3px solid #fdbf00;
+}
+.profil strong{
+    margin-top: 10px;
+}
+.profil select{
+    margin-left: 2px;
+    border-style: none;
+    border: 2px solid #fdbf00;
+}
+
+/* MODAL-ADD */
+.modal1 {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: #2e2e2e;
+    opacity: 0.8;
+}
+.modal-wrapper{
+    width: 330px;
+    max-width: calc(100vw -20px);
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow: 2px 2px 5px gray;
+    
+}
+.js-modal-close{
+    display: flex;
+    justify-content:end;
+    align-items: center;
+    border-style: none;
+    width: 100%;
+    background-color: #fdbf00;
+    margin-left: 0px;
+    
+}
+.fa-rectangle-xmark{
+    display: inline-block;
+    border-style: none;
+    font-size: 26px;
+    color:#2e2e2e;
+    margin-top: -3px;
+}
+#title-modal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.form-container{
+    padding: 20px;
+}
+strong{
+    color: #2e2e2e;
+    font-size: 12px;
+}
+label{
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.sexe,
+input{
+    width: 280px;
+    height: 25px;
+    margin-top: 5px;
+}
+.sexe{
+    margin-left: 2px;
+    border-style: none;
+}
+.fa-magnifying-glass{
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 15px;
+}
+.btn-container{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.btn-container button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e2e2e;;
+    border-style:none;
+    padding: 18px 25px 18px 20px;
+    border-radius: 5px;
+    border: 2px solid #fdbf00;
+    
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+.error{
+    font-size: 10px;
+}
